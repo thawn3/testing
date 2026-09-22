@@ -1,18 +1,14 @@
-// main page
-import './App.css'
+// main page, controls which screen to show
+import { useState } from 'react'
+import WelcomeScreen from './views/WelcomeScreen'
+import CameraView from './views/CameraView'
 
 export default function App() {
-  return (
-    <div className="app">
-      <header className="header">
-        <h1>Digital Selfie Station</h1>
-        <p className="subtitle">USACE - Tulsa District</p>
-      </header>
+  const [screen, setScreen] = useState('welcome')
 
-      <main className="screen welcome">
-        <p className="welcome-text">Take a photo with a themed frame and share your visit with USACE!</p>
-        <div className="photo-area">Photo Area!</div>
-      </main>
-    </div>
-  )
+  if (screen === 'welcome') {
+    return <WelcomeScreen onStart={() => setScreen('camera')} />
+  }
+
+  return <CameraView />
 }
