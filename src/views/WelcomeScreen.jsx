@@ -11,7 +11,7 @@ export default function WelcomeScreen({ onStart }) {
 
       <main className="screen welcome">
         <p className="welcome-text">Ready to take a photo? Share your visit with USACE!</p>
-        <button className="start-btn" onClick={onStart}>Start</button>
+        <button className="startbutton" onClick={onStart}>Let's Go!</button>
       </main>
     </div>
   )
